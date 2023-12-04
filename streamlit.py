@@ -5,7 +5,8 @@ import joblib
 
 @st.cache_data
 def load_model():
-    return joblib.load("/Users/urnavb/Documents/Talent Analytics Project/random_forest_1.joblib")
+    model_path = "models/random_forest_1.joblib"
+    return joblib.load(model_path)
 
 def convert_to_csv(df):
     return df.to_csv(index=False).encode('utf-8')
