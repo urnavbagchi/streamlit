@@ -43,6 +43,9 @@ with dataset:
         df_test.total_experience[df_test.total_experience == 'Less than 10 years'] = 4
         df_test.total_experience[df_test.total_experience == '10 + years'] = 5
 
+        df_test.university_tier[df_test.university_tier == 'Tier 1'] = 1
+        df_test.university_tier[df_test.university_tier == 'Tier 2'] = 2
+
         predict_test_proba = rfc.predict_proba(df_test)
         df_test.insert(0, 'candidate_full_name', df_candidate)
         df_test.insert(4, 'location', df_location)
